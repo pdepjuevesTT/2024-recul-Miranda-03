@@ -38,13 +38,14 @@ esCopado(casaAnioConstruccion(Anio)) :- Anio > 2015.
 
 barrioCaro(Barrio) :-
     esBarrio(Barrio),
-    forall(localidad(Persona, Barrio), viveEnCasaCara(Persona)).
+    not((localidad(Persona, Barrio), viveEnCasaBarata(Persona))).
 
-viveEnCasaCara(Persona) :- vive(Persona, Caracteristica), caracteristicaCara(Caracteristica).
+viveEnCasaBarata(Persona) :- vive(Persona, Caracteristica), caracteristicaBarata(Caracteristica).
 
-caracteristicaCara(casaAnioConstruccion(Anio)) :- Anio >= 2005.
-caracteristicaCara(casaMetros(Metros)) :- Metros >= 90.
-caracteristicaCara(casaAmbientes(Ambientes)) :- Ambientes >= 3.
+caracteristicaBarata(casaAnioConstruccion(Anio)) :- Anio < 2005.
+caracteristicaBarata(casaMetros(Metros)) :- Metros < 90.
+caracteristicaBarata(casaAmbientes(Ambientes)) :- Ambientes < 3.
+
 
 % Auxiliares
 
