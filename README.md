@@ -1,5 +1,5 @@
 # Paradigma lógico
 
-Consigna:
+Consigna: Prologpiedades
 
-Nombre:
+Nombre: Martín Miranda
